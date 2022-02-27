@@ -6,8 +6,9 @@
       <a href="" class="search-icon"></a>
     </div>
     <div id="list-items">
-      <li class="item">
-        <a href="">Pokemon {{ PokemonName }}</a>
+      <li class="item" v-for="pokemon in pokemons" :key="pokemon.pok">
+        <img :src="pokemon.pokimg" alt="" class="img-item" />
+        <a href="">Pokemon {{ pokemon.pok }}</a>
       </li>
     </div>
   </div>
@@ -18,11 +19,153 @@ export default {
   name: "HelloWorld",
   props: {
     msg: String,
-    pokename() {
-      return {
-        PokemonName: "A",
-      };
-    },
+    PokemonName: String,
+  },
+  data() {
+    return {
+      pokemons: [
+        {
+          pok: "a",
+          pokimg:
+            "https://i0.wp.com/nintendosoup.com/wp-content/uploads/2019/11/linkzeldaPokemon.jpg?fit=1500%2C844&ssl=1",
+        },
+        {
+          pok: "b",
+          pokimg:
+            "https://i0.wp.com/nintendosoup.com/wp-content/uploads/2019/11/linkzeldaPokemon.jpg?fit=1500%2C844&ssl=1",
+        },
+        {
+          pok: "a",
+          pokimg:
+            "https://i0.wp.com/nintendosoup.com/wp-content/uploads/2019/11/linkzeldaPokemon.jpg?fit=1500%2C844&ssl=1",
+        },
+        {
+          pok: "b",
+          pokimg:
+            "https://i0.wp.com/nintendosoup.com/wp-content/uploads/2019/11/linkzeldaPokemon.jpg?fit=1500%2C844&ssl=1",
+        },
+        {
+          pok: "a",
+          pokimg:
+            "https://i0.wp.com/nintendosoup.com/wp-content/uploads/2019/11/linkzeldaPokemon.jpg?fit=1500%2C844&ssl=1",
+        },
+        {
+          pok: "b",
+          pokimg:
+            "https://i0.wp.com/nintendosoup.com/wp-content/uploads/2019/11/linkzeldaPokemon.jpg?fit=1500%2C844&ssl=1",
+        },
+        {
+          pok: "a",
+          pokimg:
+            "https://i0.wp.com/nintendosoup.com/wp-content/uploads/2019/11/linkzeldaPokemon.jpg?fit=1500%2C844&ssl=1",
+        },
+        {
+          pok: "b",
+          pokimg:
+            "https://i0.wp.com/nintendosoup.com/wp-content/uploads/2019/11/linkzeldaPokemon.jpg?fit=1500%2C844&ssl=1",
+        },
+        {
+          pok: "a",
+          pokimg:
+            "https://i0.wp.com/nintendosoup.com/wp-content/uploads/2019/11/linkzeldaPokemon.jpg?fit=1500%2C844&ssl=1",
+        },
+        {
+          pok: "b",
+          pokimg:
+            "https://i0.wp.com/nintendosoup.com/wp-content/uploads/2019/11/linkzeldaPokemon.jpg?fit=1500%2C844&ssl=1",
+        },
+        {
+          pok: "a",
+          pokimg:
+            "https://i0.wp.com/nintendosoup.com/wp-content/uploads/2019/11/linkzeldaPokemon.jpg?fit=1500%2C844&ssl=1",
+        },
+        {
+          pok: "b",
+          pokimg:
+            "https://i0.wp.com/nintendosoup.com/wp-content/uploads/2019/11/linkzeldaPokemon.jpg?fit=1500%2C844&ssl=1",
+        },
+        {
+          pok: "a",
+          pokimg:
+            "https://i0.wp.com/nintendosoup.com/wp-content/uploads/2019/11/linkzeldaPokemon.jpg?fit=1500%2C844&ssl=1",
+        },
+        {
+          pok: "b",
+          pokimg:
+            "https://i0.wp.com/nintendosoup.com/wp-content/uploads/2019/11/linkzeldaPokemon.jpg?fit=1500%2C844&ssl=1",
+        },
+        {
+          pok: "a",
+          pokimg:
+            "https://i0.wp.com/nintendosoup.com/wp-content/uploads/2019/11/linkzeldaPokemon.jpg?fit=1500%2C844&ssl=1",
+        },
+        {
+          pok: "b",
+          pokimg:
+            "https://i0.wp.com/nintendosoup.com/wp-content/uploads/2019/11/linkzeldaPokemon.jpg?fit=1500%2C844&ssl=1",
+        },
+        {
+          pok: "a",
+          pokimg:
+            "https://i0.wp.com/nintendosoup.com/wp-content/uploads/2019/11/linkzeldaPokemon.jpg?fit=1500%2C844&ssl=1",
+        },
+        {
+          pok: "b",
+          pokimg:
+            "https://i0.wp.com/nintendosoup.com/wp-content/uploads/2019/11/linkzeldaPokemon.jpg?fit=1500%2C844&ssl=1",
+        },
+        {
+          pok: "a",
+          pokimg:
+            "https://i0.wp.com/nintendosoup.com/wp-content/uploads/2019/11/linkzeldaPokemon.jpg?fit=1500%2C844&ssl=1",
+        },
+        {
+          pok: "b",
+          pokimg:
+            "https://i0.wp.com/nintendosoup.com/wp-content/uploads/2019/11/linkzeldaPokemon.jpg?fit=1500%2C844&ssl=1",
+        },
+        {
+          pok: "a",
+          pokimg:
+            "https://i0.wp.com/nintendosoup.com/wp-content/uploads/2019/11/linkzeldaPokemon.jpg?fit=1500%2C844&ssl=1",
+        },
+        {
+          pok: "b",
+          pokimg:
+            "https://i0.wp.com/nintendosoup.com/wp-content/uploads/2019/11/linkzeldaPokemon.jpg?fit=1500%2C844&ssl=1",
+        },
+        {
+          pok: "a",
+          pokimg:
+            "https://i0.wp.com/nintendosoup.com/wp-content/uploads/2019/11/linkzeldaPokemon.jpg?fit=1500%2C844&ssl=1",
+        },
+        {
+          pok: "b",
+          pokimg:
+            "https://i0.wp.com/nintendosoup.com/wp-content/uploads/2019/11/linkzeldaPokemon.jpg?fit=1500%2C844&ssl=1",
+        },
+        {
+          pok: "a",
+          pokimg:
+            "https://i0.wp.com/nintendosoup.com/wp-content/uploads/2019/11/linkzeldaPokemon.jpg?fit=1500%2C844&ssl=1",
+        },
+        {
+          pok: "b",
+          pokimg:
+            "https://i0.wp.com/nintendosoup.com/wp-content/uploads/2019/11/linkzeldaPokemon.jpg?fit=1500%2C844&ssl=1",
+        },
+        {
+          pok: "a",
+          pokimg:
+            "https://i0.wp.com/nintendosoup.com/wp-content/uploads/2019/11/linkzeldaPokemon.jpg?fit=1500%2C844&ssl=1",
+        },
+        {
+          pok: "b",
+          pokimg:
+            "https://i0.wp.com/nintendosoup.com/wp-content/uploads/2019/11/linkzeldaPokemon.jpg?fit=1500%2C844&ssl=1",
+        },
+      ],
+    };
   },
 };
 </script>
@@ -32,6 +175,15 @@ export default {
 h3 {
   margin: 40px 0 0;
 }
+
+.img-item {
+  width: 220px;
+}
+
+#list-items {
+  margin-top: 8px;
+}
+
 ul {
   list-style-type: none;
   padding: 0;
@@ -42,5 +194,6 @@ li {
 }
 a {
   color: #42b983;
+  display: block;
 }
 </style>
