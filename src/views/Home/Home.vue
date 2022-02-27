@@ -1,6 +1,6 @@
 <template>
   <div class="home">
-    <HelloWorld msg="Welcome to Your Vue.js App" />
+    <HelloWorld PokemonName="A" />
   </div>
 </template>
 
@@ -9,7 +9,8 @@
 import HelloWorld from "@/components/HelloWorld.vue";
 
 export default {
-  name: "HomeView",
+  // eslint-disable-next-line vue/multi-word-component-names
+  name: "Home",
   components: {
     HelloWorld,
   },
