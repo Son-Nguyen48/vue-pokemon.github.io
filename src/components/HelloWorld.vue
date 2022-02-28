@@ -1,13 +1,14 @@
 <template>
   <div class="hello">
     <div id="header">
-      <div class="logo"></div>
-      <input type="text" class="search-bar" />
-      <a href="" class="search-icon"></a>
+      <a class="logo"></a>
+      <input type="text" class="search-bar" placeholder="Enter name Pokemon" />
+      <a href="" class="search-icon"><i class="ti-search"></i></a>
     </div>
     <div id="list-items">
-      <li class="item">
-        <a href="">Pokemon {{ PokemonName }}</a>
+      <li class="item" v-for="pokemon in pokemons" :key="pokemon.pok">
+        <img :src="pokemon.pokimg" alt="" class="img-item" />
+        <a href="">Pokemon {{ pokemon.pok }}</a>
       </li>
     </div>
   </div>
@@ -18,29 +19,155 @@ export default {
   name: "HelloWorld",
   props: {
     msg: String,
-    pokename() {
-      return {
-        PokemonName: "A",
-      };
-    },
+    PokemonName: String,
+  },
+  data() {
+    return {
+      pokemons: [
+        {
+          pok: "a",
+          pokimg:
+            "https://i0.wp.com/nintendosoup.com/wp-content/uploads/2019/11/linkzeldaPokemon.jpg?fit=1500%2C844&ssl=1",
+        },
+        {
+          pok: "b",
+          pokimg:
+            "https://i0.wp.com/nintendosoup.com/wp-content/uploads/2019/11/linkzeldaPokemon.jpg?fit=1500%2C844&ssl=1",
+        },
+        {
+          pok: "c",
+          pokimg:
+            "https://i0.wp.com/nintendosoup.com/wp-content/uploads/2019/11/linkzeldaPokemon.jpg?fit=1500%2C844&ssl=1",
+        },
+        {
+          pok: "d",
+          pokimg:
+            "https://i0.wp.com/nintendosoup.com/wp-content/uploads/2019/11/linkzeldaPokemon.jpg?fit=1500%2C844&ssl=1",
+        },
+        {
+          pok: "a",
+          pokimg:
+            "https://i0.wp.com/nintendosoup.com/wp-content/uploads/2019/11/linkzeldaPokemon.jpg?fit=1500%2C844&ssl=1",
+        },
+        {
+          pok: "b",
+          pokimg:
+            "https://i0.wp.com/nintendosoup.com/wp-content/uploads/2019/11/linkzeldaPokemon.jpg?fit=1500%2C844&ssl=1",
+        },
+        {
+          pok: "a",
+          pokimg:
+            "https://i0.wp.com/nintendosoup.com/wp-content/uploads/2019/11/linkzeldaPokemon.jpg?fit=1500%2C844&ssl=1",
+        },
+        {
+          pok: "b",
+          pokimg:
+            "https://i0.wp.com/nintendosoup.com/wp-content/uploads/2019/11/linkzeldaPokemon.jpg?fit=1500%2C844&ssl=1",
+        },
+        {
+          pok: "a",
+          pokimg:
+            "https://i0.wp.com/nintendosoup.com/wp-content/uploads/2019/11/linkzeldaPokemon.jpg?fit=1500%2C844&ssl=1",
+        },
+        {
+          pok: "b",
+          pokimg:
+            "https://i0.wp.com/nintendosoup.com/wp-content/uploads/2019/11/linkzeldaPokemon.jpg?fit=1500%2C844&ssl=1",
+        },
+        {
+          pok: "a",
+          pokimg:
+            "https://i0.wp.com/nintendosoup.com/wp-content/uploads/2019/11/linkzeldaPokemon.jpg?fit=1500%2C844&ssl=1",
+        },
+        {
+          pok: "b",
+          pokimg:
+            "https://i0.wp.com/nintendosoup.com/wp-content/uploads/2019/11/linkzeldaPokemon.jpg?fit=1500%2C844&ssl=1",
+        },
+        {
+          pok: "a",
+          pokimg:
+            "https://i0.wp.com/nintendosoup.com/wp-content/uploads/2019/11/linkzeldaPokemon.jpg?fit=1500%2C844&ssl=1",
+        },
+        {
+          pok: "b",
+          pokimg:
+            "https://i0.wp.com/nintendosoup.com/wp-content/uploads/2019/11/linkzeldaPokemon.jpg?fit=1500%2C844&ssl=1",
+        },
+        {
+          pok: "a",
+          pokimg:
+            "https://i0.wp.com/nintendosoup.com/wp-content/uploads/2019/11/linkzeldaPokemon.jpg?fit=1500%2C844&ssl=1",
+        },
+        {
+          pok: "b",
+          pokimg:
+            "https://i0.wp.com/nintendosoup.com/wp-content/uploads/2019/11/linkzeldaPokemon.jpg?fit=1500%2C844&ssl=1",
+        },
+        {
+          pok: "a",
+          pokimg:
+            "https://i0.wp.com/nintendosoup.com/wp-content/uploads/2019/11/linkzeldaPokemon.jpg?fit=1500%2C844&ssl=1",
+        },
+        {
+          pok: "b",
+          pokimg:
+            "https://i0.wp.com/nintendosoup.com/wp-content/uploads/2019/11/linkzeldaPokemon.jpg?fit=1500%2C844&ssl=1",
+        },
+        {
+          pok: "a",
+          pokimg:
+            "https://i0.wp.com/nintendosoup.com/wp-content/uploads/2019/11/linkzeldaPokemon.jpg?fit=1500%2C844&ssl=1",
+        },
+        {
+          pok: "b",
+          pokimg:
+            "https://i0.wp.com/nintendosoup.com/wp-content/uploads/2019/11/linkzeldaPokemon.jpg?fit=1500%2C844&ssl=1",
+        },
+        {
+          pok: "a",
+          pokimg:
+            "https://i0.wp.com/nintendosoup.com/wp-content/uploads/2019/11/linkzeldaPokemon.jpg?fit=1500%2C844&ssl=1",
+        },
+        {
+          pok: "b",
+          pokimg:
+            "https://i0.wp.com/nintendosoup.com/wp-content/uploads/2019/11/linkzeldaPokemon.jpg?fit=1500%2C844&ssl=1",
+        },
+        {
+          pok: "a",
+          pokimg:
+            "https://i0.wp.com/nintendosoup.com/wp-content/uploads/2019/11/linkzeldaPokemon.jpg?fit=1500%2C844&ssl=1",
+        },
+        {
+          pok: "b",
+          pokimg:
+            "https://i0.wp.com/nintendosoup.com/wp-content/uploads/2019/11/linkzeldaPokemon.jpg?fit=1500%2C844&ssl=1",
+        },
+        {
+          pok: "a",
+          pokimg:
+            "https://i0.wp.com/nintendosoup.com/wp-content/uploads/2019/11/linkzeldaPokemon.jpg?fit=1500%2C844&ssl=1",
+        },
+        {
+          pok: "b",
+          pokimg:
+            "https://i0.wp.com/nintendosoup.com/wp-content/uploads/2019/11/linkzeldaPokemon.jpg?fit=1500%2C844&ssl=1",
+        },
+        {
+          pok: "a",
+          pokimg:
+            "https://i0.wp.com/nintendosoup.com/wp-content/uploads/2019/11/linkzeldaPokemon.jpg?fit=1500%2C844&ssl=1",
+        },
+        {
+          pok: "b",
+          pokimg:
+            "https://i0.wp.com/nintendosoup.com/wp-content/uploads/2019/11/linkzeldaPokemon.jpg?fit=1500%2C844&ssl=1",
+        },
+      ],
+    };
   },
 };
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped lang="scss">
-h3 {
-  margin: 40px 0 0;
-}
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-li {
-  display: inline-block;
-  margin: 0 10px;
-}
-a {
-  color: #42b983;
-}
-</style>
