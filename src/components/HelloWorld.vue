@@ -1,8 +1,8 @@
 <template>
   <div class="hello">
     <div id="header">
-      <div class="logo"></div>
-      <input type="text" class="search-bar" />
+      <a class="logo"></a>
+      <input type="text" class="search-bar" placeholder="Enter name Pokemon" />
       <a href="" class="search-icon"><i class="ti-search"></i></a>
     </div>
     <div id="list-items">
