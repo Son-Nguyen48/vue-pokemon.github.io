@@ -1,3 +1,9 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
 h3 {
   margin: 40px 0 0;
 }
@@ -15,18 +21,18 @@ ul {
   padding: 0;
 }
 li {
-  display: inline-block;
-  margin: 0 20px;
+  display: inline-table;
+  transition: 0.4s all ease;
+  transition-delay: 0.1s;
+  border-radius: 10%;
+  background: #f2f2f2;
+  margin: 5px;
 }
 
 li:hover {
-  background: #42b983;
-  transition: 0.6s all ease;
+  box-shadow: 5px 10px 18px #333;
   cursor: pointer;
-  border: 1px solid;
-  padding: 10px;
-  box-shadow: 5px 10px 18px #42b983;
-  margin: 16px;
+  background: #42b983;
 }
 
 li:hover > a {
@@ -38,6 +44,7 @@ li a {
   text-decoration: none;
   font-size: 20px;
 }
+
 a {
   color: #42b983;
 }
