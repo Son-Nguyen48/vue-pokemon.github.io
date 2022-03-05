@@ -15,6 +15,12 @@ const routes = [
     name: "detail",
     component: () => import("../views/Detail/Detail.vue"),
   },
+  {
+    path: "/pokemon/",
+    name: "pokemon-detail",
+    component: () => import("../views/Detail/PokemonDetail.vue"),
+    props: { pokemonDetail: true },
+  },
 ];
 
 const router = new VueRouter({
