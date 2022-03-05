@@ -25,6 +25,7 @@ const objectColor = {
   Normal: "normalType",
   Dragon: "dragonType",
   Fighting: "fightingType",
+  Rock: "rockType",
 };
 
 export default {

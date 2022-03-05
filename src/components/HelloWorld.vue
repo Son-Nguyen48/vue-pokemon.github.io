@@ -11,19 +11,21 @@
       <a href="" class="search-icon"><i class="ti-search"></i></a>
     </div>
     <div id="list-items">
-      <li
+      <router-link
+        to="/PokemonDetail"
         class="item"
         v-for="pokemon in pokemons"
         :key="pokemon.name"
+        :pokemonDetail="pokemon"
         v-wow="{ 'animation-name': 'bounceIn', 'animation-duration': '1s' }"
       >
         <img :src="pokemon.img" alt="" class="img-item" />
-        <a href="" class="pokemon-name"> {{ pokemon.name }}</a>
+        <p class="pokemon-name">{{ pokemon.name }}</p>
         <!-- <p v-for="ty in pokemon.type" :key="ty" class="pokemon-type">
           {{ ty }}
         </p> -->
         <PokemonType :types="pokemon.type" />
-      </li>
+      </router-link>
     </div>
   </div>
 </template>
