@@ -60,7 +60,9 @@ ul {
 a {
   color: #333;
 }
-
+br {
+  border: #727272 solid 1px;
+}
 .header {
   display: flex;
   justify-content: center;
@@ -97,11 +99,11 @@ a {
   cursor: pointer;
 }
 
-.pokemon-name {
+#list-items .pokemon-name {
   font-size: 12px;
 }
 
-.pokemon-type {
+#list-items .pokemon-type {
   display: inline-block;
   font-family: "Flexo-Medium", arial, sans-serif;
   border-radius: 3px;
@@ -163,3 +165,17 @@ input {
 .rockType {
   background: #a38c21;
 }
+.iceType {
+  background: #51c4e7;
+}
+.darkType {
+  background: #707070;
+}
+.ghostType {
+  background: #7b62a3;
+}
+/* End Hellword.vue css  */
+
+/* Begin PokemonDetail.vue css  */
+
+/* End PokemonDetail.vue css  */

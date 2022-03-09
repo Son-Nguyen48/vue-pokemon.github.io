@@ -12,11 +12,11 @@
     </div>
     <div id="list-items">
       <router-link
-        to="/PokemonDetail"
         class="item"
         v-for="pokemon in pokemons"
+        :to="/pokemon/ + pokemon.id"
         :key="pokemon.name"
-        :pokemonDetail="pokemon"
+        :pokemonDetail="pokemons.id"
         v-wow="{ 'animation-name': 'bounceIn', 'animation-duration': '1s' }"
       >
         <img :src="pokemon.img" alt="" class="img-item" />
@@ -27,6 +27,7 @@
         <PokemonType :types="pokemon.type" />
       </router-link>
     </div>
+    <div class="footer">&copy;Pokemon.com All copyright</div>
   </div>
 </template>
 
@@ -59,7 +60,26 @@ export default {
       });
   },
   // eslint-disable-next-line prettier/prettier
-  methods: {}
+  // methods: {
+  //   routeToPokemonDetail(value) {
+  //     this.$router.push({
+  //       name: "pokemon",
+  //       params: {
+  //         id: value.id,
+  //       },
+  //       props: {
+  //         pokemonDetail: {
+  //           name: value.name,
+  //         },
+  //       },
+  //     });
+  //   },
+  // },
+  // provide() {
+  //   return {
+  //     pokemons: this.pokemons,
+  //   };
+  // },
 };
 </script>
 
