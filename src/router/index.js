@@ -16,10 +16,14 @@ const routes = [
     component: () => import("../views/Detail/Detail.vue"),
   },
   {
-    path: "/pokemon/",
-    name: "pokemon-detail",
+    path: "/pokemon/:id",
+    name: "pokemon",
     component: () => import("../views/Detail/PokemonDetail.vue"),
-    props: { pokemonDetail: true },
+    props: (route) => {
+      return {
+        ...route,
+      };
+    },
   },
 ];
 

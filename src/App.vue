@@ -3,7 +3,7 @@
     <nav>
       <router-link to="/">Home</router-link> |
       <router-link to="/about">About</router-link> |
-      <router-link to="/pokemon-detail">Pokemon Detail</router-link>
+      <router-link to="/pokemon/:id">Pokemon Detail</router-link>
     </nav>
     <router-view />
   </div>
