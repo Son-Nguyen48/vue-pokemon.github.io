@@ -1,55 +1,104 @@
 <template>
-  <div id="pokemon-detail">
-    <span class="pokemon-name">Name: {{ pokemonDetail.name }}</span> |
-    <span class="pokemon-number">Number: {{ pokemonDetail.num }}</span> <br />
+  <div
+    id="pokemon-detail"
+    v-wow="{ 'animation-name': 'bounceIn', 'animation-duration': '1s' }"
+  >
+    <h5 class="pokemon-name">Name: {{ pokemonDetail.name }}</h5>
+    <h5 class="pokemon-number">Number: {{ pokemonDetail.num }}</h5>
     <div class="table-infor">
-      <img :src="pokemonDetail.img" alt="" class="pokemon-img" />
+      <div class="pokemon-card">
+        <img
+          :src="pokemonDetail.img"
+          alt=""
+          class="pokemon-img"
+          v-wow="{ 'animation-name': 'bounceIn', 'animation-duration': '1s' }"
+        />
+      </div>
       <div class="box-detail-1">
-        <span class="pokemon-height">Height</span> |
-        <span>{{ pokemonDetail.height }}</span> <br />
-        <span class="pokemon-weight">Weight</span> |
-        <span>{{ pokemonDetail.weight }}</span> <br />
-        <span class="pokemon-candy">Candy</span> |
-        <span>{{ pokemonDetail.candy }}</span> <br />
-        <span class="pokemon-candy_count">Candy count</span> |
-        <span>{{ pokemonDetail.candy_count }}</span> <br />
-        <span class="pokemon-egg">Egg</span> |
-        <span>{{ pokemonDetail.egg }}</span> <br />
+        <table class="pokemon-data">
+          <tbody>
+            <tr>
+              <th class="pokemon-height left">Height:</th>
+              <td>{{ pokemonDetail.height }}</td>
+            </tr>
+            <tr>
+              <th class="pokemon-weight left">Weight:</th>
+              <td>{{ pokemonDetail.weight }}</td>
+            </tr>
+            <tr>
+              <th class="pokemon-candy left">Candy:</th>
+              <td>{{ pokemonDetail.candy }}</td>
+            </tr>
+            <tr>
+              <th class="pokemon-egg left">Egg:</th>
+              <td>{{ pokemonDetail.egg }}</td>
+            </tr>
+            <tr>
+              <th class="pokemon-candy_count left">Candy count:</th>
+              <td>{{ pokemonDetail.candy_count }}</td>
+            </tr>
+          </tbody>
+        </table>
       </div>
       <div class="box-detail-2">
-        <span class="pokemon-type">Type</span> |
-        <span
-          :class="[typeColor(type)]"
-          class="pokemon-type"
-          v-for="type in pokemonDetail.type"
-          :key="type"
-        >
-          {{ type }}
-        </span>
-        <br />
-        <span class="pokemon-type">Weaknesses</span> |
-        <span
-          :class="[typeColor(type)]"
-          class="pokemon-type"
-          v-for="type in pokemonDetail.weaknesses"
-          :key="type"
-        >
-          {{ type }}
-        </span>
+        <table>
+          <tbody>
+            <tr>
+              <td>Type:</td>
+              <td
+                :class="[typeColor(type)]"
+                class="pokemon-type"
+                v-for="type in pokemonDetail.type"
+                :key="type"
+              >
+                {{ type }}
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <table>
+          <tbody>
+            <tr>
+              <td>Weaknesses:</td>
+              <td
+                :class="[typeColor(type)]"
+                class="pokemon-type"
+                v-for="type in pokemonDetail.weaknesses"
+                :key="type"
+              >
+                {{ type }}
+              </td>
+            </tr>
+          </tbody>
+        </table>
       </div>
     </div>
     <div>
       Pokemon Go:
-      <span class="pokemon-egg">egg</span> |
-      <span>{{ pokemonDetail.egg }}</span> <br />
-      <span class="pokemon-spawn_chance">spawn_chance</span> |
-      <span>{{ pokemonDetail.spawn_chance }}</span> <br />
-      <span class="pokemon-avg_spawns">avg_spawns</span> |
-      <span>{{ pokemonDetail.avg_spawns }}</span> <br />
-      <span class="pokemon-spawn_time">spawn_time</span> |
-      <span>{{ pokemonDetail.spawn_time }}</span> <br />
-      <span class="pokemon-multipliers">multipliers</span> |
-      <span>{{ pokemonDetail.multipliers }}</span> <br />
+      <table>
+        <tbody>
+          <tr>
+            <th class="pokemon-egg">egg</th>
+            <td>{{ pokemonDetail.egg }}</td>
+          </tr>
+          <tr>
+            <th class="pokemon-spawn_chance">spawn_chance</th>
+            <td>{{ pokemonDetail.spawn_chance }}</td>
+          </tr>
+          <tr>
+            <th class="pokemon-avg_spawns">avg_spawns</th>
+            <td>{{ pokemonDetail.avg_spawns }}</td>
+          </tr>
+          <tr>
+            <th class="pokemon-spawn_time">spawn_time</th>
+            <td>{{ pokemonDetail.spawn_time }}</td>
+          </tr>
+          <tr>
+            <th class="pokemon-multipliers">multipliers</th>
+            <td>{{ pokemonDetail.multipliers }}</td>
+          </tr>
+        </tbody>
+      </table>
     </div>
     <div class="pokemon-Weaknesses">Evolution:</div>
     <div class="pokemon-evolutions"></div>
@@ -108,15 +157,30 @@ export default {
   },
 };
 </script>
+
 <style lang="css" scope>
+.left {
+  float: left;
+}
+
+.right {
+  float: right;
+}
+
 body {
   background: rgb(220, 229, 235);
+  font-size: 12px;
 }
+
 #pokemon-detail {
   margin: 20px auto;
   width: 600px;
   background: #fff;
   border-radius: 5px;
+  padding: 20px;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+    rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+    rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
 }
 
 #pokemon-detail .table-infor {
@@ -124,20 +188,31 @@ body {
 }
 
 #pokemon-detail .pokemon-img {
-  height: 150px;
-  margin: 8px auto;
+  height: 147px;
+  margin: 0px auto;
+  background: linear-gradient(180deg, #53a4cf 6%, #f16e57 100%);
+  border-radius: 5px;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+    rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+    rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
 }
 
 .box-detail-1,
 .box-detail-2 {
   width: calc(100% / 3);
+  margin-left: 16px;
+}
+
+.box-detail-1 .pokemon-data tr,
+.box-detail-2 tr {
+  border-bottom: 0.01px solid rgb(230, 228, 228);
 }
 
 .box-detail-2 {
   margin-left: 18px;
 }
 
-.table-infor .pokemon-type {
+.box-detail-2 .pokemon-type {
   font-family: "Flexo-Medium", arial, sans-serif;
   border-radius: 3px;
   line-height: 16px;
@@ -147,7 +222,7 @@ body {
   width: 46.4375%;
   /* float: left; */
   text-transform: none;
-  font-size: 16px;
+  font-size: 12px;
   text-align: center;
 }
 </style>
